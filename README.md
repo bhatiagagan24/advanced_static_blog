@@ -1,0 +1,1 @@
+# advanced_static_blog
