@@ -9,7 +9,6 @@ from bson.json_util import dumps, loads
 
 ALLOWED_EXTENSIONS = set(['txt', 'html'])
 
-connection_to_mongo_atlas = "mongodb+srv://admin_user101:thisismyblog101@cluster0.xcgis.mongodb.net/<blog_api>?retryWrites=true&w=majority"
 client = pymongo.MongoClient(connection_to_mongo_atlas)
 db = client.get_database('blog_api')
 print(db)
