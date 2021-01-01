@@ -1,4 +1,5 @@
 import flask
+import os
 from flask import Flask, redirect, render_template, request
 from flask import Markup
 import json
@@ -8,7 +9,7 @@ from flask_pymongo import pymongo
 from bson.json_util import dumps, loads
 
 ALLOWED_EXTENSIONS = set(['txt', 'html'])
-
+connection_to_mongo_atlas = os.environ.get('DB_CONNECTION')
 client = pymongo.MongoClient(connection_to_mongo_atlas)
 db = client.get_database('blog_api')
 print(db)
@@ -206,4 +207,4 @@ def func_error(error):
 if __name__ == '__main__':
     getting_last_id_of_blog()
     key_for_api()
-    app.run(debug=True)
+    app.run()
