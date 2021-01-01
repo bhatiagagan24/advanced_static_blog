@@ -9,7 +9,7 @@ from flask_pymongo import pymongo
 from bson.json_util import dumps, loads
 
 ALLOWED_EXTENSIONS = set(['txt', 'html'])
-connection_to_mongo_atlas = os.environ.get('DB_CONNECTION')
+connection_to_mongo_atlas = os.environ('DB_CONNECTION')
 client = pymongo.MongoClient(connection_to_mongo_atlas)
 db = client.get_database('blog_api')
 print(db)
