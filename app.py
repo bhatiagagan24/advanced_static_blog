@@ -212,5 +212,5 @@ def func_error(error):
 
 if __name__ == '__main__':
     getting_last_id_of_blog()
-    key_for_api()
+#     key_for_api()
     app.run()
