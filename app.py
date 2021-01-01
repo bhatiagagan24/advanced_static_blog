@@ -104,7 +104,13 @@ def home_func():
     xyz = len(list_synopsis)
     return render_template('home_main.html', blog_title = list_title, blog_synopsis = list_synopsis, blog_data=[list_title, list_synopsis, list_file_name], xyz=xyz)
 
-
+@app.route('/<blog_name>')
+def displaying_blog(blog_name):
+    try:
+        return render_template(blog_name + '.html')
+    except:
+        return redirect(url_for('func_error'))
+    return 0
 
 @app.route('/keyforapi/retrieve')
 def key_for_upload():
