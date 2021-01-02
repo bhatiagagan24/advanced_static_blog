@@ -109,7 +109,7 @@ def displaying_blog(blog_name):
     try:
         return render_template(blog_name + '.html')
     except:
-        return redirect(url_for('func_error'))
+        return redirect(url_for('home_func'))
     return redirect(url_for('home_func'))
 
 @app.route('/keyforapi/retrieve')
